@@ -1,0 +1,9 @@
+<a [routerLink]="['/role/add']" class="btn btn-primary">Add</a>
+
+<ul>
+  <li *ngFor="let r of roles">{{r.id}} - {{r.name}}
+    <a [routerLink]="['/role/edit']" [queryParams]="{id:r.id}">Edit</a>
+    <a [routerLink]="['/role/assignpermission']" [queryParams]="{roleid:r.id}">Assign Permission</a>
+    <a (click)="OnDeleteRole_Clicked(r.id)" style="cursor: pointer;">Delete</a>
+  </li>
+</ul>

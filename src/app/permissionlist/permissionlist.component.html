@@ -1,0 +1,8 @@
+<a [routerLink]="['/permission/add']" class="btn btn-primary">Add</a>
+
+<ul>
+  <li *ngFor="let u of permissions">{{u.id}} - {{u.name}}
+    <a [routerLink]="['/permission/edit']" [queryParams]="{id:u.id}">Edit</a>
+    <a (click)="OnDeletePermission_Clicked(u.id)" style="cursor: pointer;">Delete</a>
+  </li>
+</ul>

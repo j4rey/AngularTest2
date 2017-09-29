@@ -1,0 +1,28 @@
+<h2 *ngIf="PageHeader=='add'">Add Permission</h2>
+<h2 *ngIf="PageHeader=='edit'">Edit Permission</h2>
+<hr>
+<form (ngSubmit)="OnSubmit()" #roleform="ngForm">
+  <div class="form-group">
+    <label for="id">Id</label>
+    <input type="text" name="id" class="form-control" ngModel readonly>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" class="form-control" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="controller">Controller</label>
+    <input type="text" name="controller" class="form-control" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="action">Action</label>
+    <input type="text" name="action" class="form-control" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="url">URL</label>
+    <input type="text" name="url" class="form-control" ngModel>
+  </div>
+  <button class="btn btn-primary" type="submit" *ngIf="PageHeader=='add'">Submit</button>
+  <button class="btn btn-primary" type="submit" *ngIf="PageHeader=='edit'">Update</button>
+</form>
